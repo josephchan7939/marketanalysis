@@ -6,7 +6,8 @@ from com.aniket.dev.mrkt.analysis.tools.search_tools import SearchTools
 from com.aniket.dev.mrkt.analysis.tools.sec_tools import SECTools
 from langchain_groq import ChatGroq
 from langchain.tools.yahoo_finance_news import YahooFinanceNewsTool
-from langchain_openai import ChatOpenAI
+#from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 from dotenv import load_dotenv
 from com.aniket.dev.mrkt.analysis.constant.constants import *
 
@@ -35,17 +36,18 @@ class MarketObserverAgents:
                                    If False, use the OpenAI language model.
                                    Defaults to False.
     """
+    #print(OLLAMA_BASE_URL)
     if use_groq:
       self.llm = ChatGroq(
         api_key=os.getenv(GROQ_API_KEY),
         model=LLAMA3_70B_8192
       )
     else:
-      self.llm = ChatOpenAI(
+      self.llm = ChatOllama(
         model=CREWAI_LLAMA3_8B,
         base_url=OLLAMA_BASE_URL,
-        request_timeout=REQUEST_TIMEOUT,
-        api_key=PLACEHOLDER_API_KEY
+        #request_timeout=REQUEST_TIMEOUT,
+        #api_key=PLACEHOLDER_API_KEY
       )
 
   def financial_analyst_employee(self):

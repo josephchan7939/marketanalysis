@@ -1,12 +1,14 @@
 # Model names
 LLAMA3_70B_8192 = "llama3-70b-8192"
-CREWAI_LLAMA3_8B = "crewai-llama3-8b"
+#CREWAI_LLAMA3_8B = "crewai-llama3-8b"
+CREWAI_LLAMA3_8B = "llama3"
 
 # API keys
 GROQ_API_KEY = "GROQ_API_KEY"
 
 # URLs
-OLLAMA_BASE_URL = "http://localhost:11434/v1"
+#OLLAMA_BASE_URL = "http://localhost:11434/v1"
+OLLAMA_BASE_URL = "https://35fe-34-19-113-112.ngrok-free.app/"
 
 # Timeouts
 REQUEST_TIMEOUT = 300000
